@@ -1,5 +1,5 @@
 #run after installing foot and opening it
-sudo pacman -S vim neovim lazygit ly docker docker-compose
+sudo pacman -S vim neovim lazygit ly docker docker-compose lua luarocks tree-sitter texlive-binextra zathura-pdf-poppler:
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
