@@ -1,5 +1,5 @@
 #run after installing foot and opening it
-sudo pacman -S vim neovim lazygit ly docker docker-compose lua luarocks tree-sitter texlive-binextra zathura-pdf-poppler:
+sudo pacman -S vim neovim lazygit ly docker docker-compose lua luarocks tree-sitter exa zoxide zellij
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
@@ -16,8 +16,11 @@ sudo systemctl enable containerd.service
 sudo systemctl start docker.service
 sudo usermod -aG docker $USER
 
-echo "settung up ly"
-sudo systemctl disable sddm.service
-sudo systemctl enable ly.service
+echo "
+zoxide init fish | source
+" >>~/.config/fish/config.fish
 
-reboot
+# KDE connect firewall configuration
+sudo firewall-cmd --permanent --add-port=1714-1764/udp
+sudo firewall-cmd --permanent --add-port=1714-1764/tcp
+sudo firewall-cmd --permanent --add-service=kdeconnect
