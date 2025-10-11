@@ -20,6 +20,16 @@ echo "
 zoxide init fish | source
 " >>~/.config/fish/config.fish
 
+echo "
+alias ls 'eza --icons'
+alias tree 'exa -T --level=3 --icons'
+alias vim nvim
+alias lg lazygit
+" >>~/.config/fish/config.fish
+echo "
+map ctrl+c copy_to_clipboard
+map ctrl+super+c send_text all \x03
+" >>~/.config/kitty/kitty.conf
 # KDE connect firewall configuration
 sudo firewall-cmd --permanent --add-port=1714-1764/udp
 sudo firewall-cmd --permanent --add-port=1714-1764/tcp
