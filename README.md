@@ -57,3 +57,32 @@ echo"
 UUID=UUID_OF_PAE
 "
 ```
+
+
+
+## Wireguard
+
+```bash
+sudo pacman -S wireguard-tools openresolv
+```
+```
+sudo cp wireguard_config_file.conf /etc/wireguard/NAME.conf
+```
+
+Enable IP forwarding:
+```bash
+echo "net.ipv4.ip_forward = 1" | sudo tee /etc/sysctl.d/30-wireguard.conf
+sudo sysctl --system
+```
+Open necessary ports, enable systemd-resolved
+```bash
+sudo firewall-cmd --zone=public --add-port=51820/udp --permanent
+sudo firewall-cmd --add-service=wireguard --permanent
+sudo firewall-cmd --reload
+sudo systemctl enable --now systemd-resolved
+```
+
+Now just start the vpn connection (`.conf` not needed in name of config being activated):
+```bash
+sudo wg-quick up NAME
+```
