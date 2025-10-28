@@ -11,6 +11,7 @@ input {
     kb_options = grp:alt_shift_toggle, caps:escape
 }
 " >>~/.config/hypr/hyprland/general.conf
+hyprctl reload
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 sudo systemctl start docker.service
@@ -25,6 +26,8 @@ alias ls 'eza --icons'
 alias tree 'exa -T --level=3 --icons'
 alias vim nvim
 alias lg lazygit
+alias wgup 'sudo wg-quick up wg0'
+alias wgdown 'sudo wg-quick down wg0'
 " >>~/.config/fish/config.fish
 echo "
 map ctrl+c copy_to_clipboard
