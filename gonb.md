@@ -19,4 +19,4 @@ Install `base-devel`
 ```fish
 sudo pacman -S base-devel
 ```
-Ensure [anaconda is installed](./anaconda.md)
+Ensure anaconda is installed

@@ -28,14 +28,18 @@ set VERSION $(curl -s https://repo.anaconda.com/archive/ \
                 | tr -d '"' \
                 | sort -V \
                 | tail -n 1)
-curl -o ~/.temp/anaconda_install.sh https://repo.anaconda.com/archive/$VERSION
-chmod +x ~/.temp/anaconda_install.sh
-~/.temp/anaconda_install.sh
+curl -o ~/.cache/anaconda_install.sh https://repo.anaconda.com/archive/$VERSION
+chmod +x ~/.cashe/anaconda_install.sh
+~/.cache/anaconda_install.sh
 ```
 
 ```bash
 eval "$(/home/user/anaconda3/bin/conda shell.fish hook)"
 conda init fish
+```
+If you need to redo this command (fish config broke) run:
+```bash
+~/anaconda3/bin/conda init fish
 ```
 
 ## For mounting separate drive permanently in FS
