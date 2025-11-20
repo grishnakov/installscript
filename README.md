@@ -61,7 +61,10 @@ sudo echo"
 UUID=________________                     /mnt/WINDOWS   ntfs    defaults   0 2
 " >>/etc/fstab
 ```
-
+Either restart or run the following command:
+```bash
+systemctl daemon-reload
+```
 
 
 ## Wireguard
