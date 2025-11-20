@@ -57,9 +57,9 @@ Manually mount, then include in `/etc/fstab` for automatic mounting on startup (
 sudo mount /dev/nvme1n1p3 /mnt/WINDOWS
 ```
 ```bash
-echo"
-UUID=UUID_OF_PAE
-"
+sudo echo"
+UUID=________________                     /mnt/WINDOWS   ntfs    defaults   0 2
+" >>/etc/fstab
 ```
 
 

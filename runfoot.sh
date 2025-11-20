@@ -29,10 +29,6 @@ alias lg lazygit
 alias wgup 'sudo wg-quick up wg0'
 alias wgdown 'sudo wg-quick down wg0'
 " >>~/.config/fish/config.fish
-echo "
-map ctrl+c copy_to_clipboard
-map ctrl+super+c send_text all \x03
-" >>~/.config/kitty/kitty.conf
 # KDE connect firewall configuration
 sudo firewall-cmd --permanent --add-port=1714-1764/udp
 sudo firewall-cmd --permanent --add-port=1714-1764/tcp
